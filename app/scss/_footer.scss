@@ -1,0 +1,68 @@
+.footer {
+  background-color: $veryDarkViolet;
+  color: white;
+  text-align: center;
+
+  .container {
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include breakpoint-up(large) {
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    margin-bottom: rem(50px);
+    a > svg > path {
+      fill: white;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    margin-bottom: rem(50px);
+
+    @include breakpoint-up(large) {
+      margin-bottom: 0px;
+    }
+    .title {
+      margin-bottom: rem(14px);
+    }
+
+    a {
+      transition: color 150ms ease-in-out;
+      &:hover {
+        color: $cyan;
+      }
+    }
+  }
+
+  .col1 {
+  }
+  .col2 {
+  }
+  .col3 {
+  }
+
+  &__social {
+    a:not(:last-child) {
+      margin-right: rem(15px);
+    }
+
+    a {
+      svg > path {
+        transition: all 150ms ease-in-out;
+      }
+      &:hover {
+        svg > path {
+          fill: $cyan;
+        }
+      }
+    }
+  }
+}

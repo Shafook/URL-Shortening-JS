@@ -1,0 +1,107 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    @include breakpoint-up(large) {
+      margin-right: rem(45px);
+    }
+    img {
+      width: rem(150px);
+      @include breakpoint-up(large) {
+        width: auto;
+      }
+    }
+  }
+
+  &__links-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    a {
+      &:not(:last-child) {
+        margin-right: rem(25px);
+      }
+
+      transition: color 150ms ease-in-out;
+      &:hover {
+        color: $veryDarkViolet;
+      }
+    }
+  }
+
+  &__cta {
+    .login {
+      margin-right: rem(25px);
+
+      transition: color 150ms ease-in-out;
+      &:hover {
+        color: $veryDarkViolet;
+      }
+    }
+
+    .link-button {
+      padding: 0.5rem 1.5rem;
+      font-size: $font-sm;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    span {
+      display: block;
+      width: rem(26px);
+      height: rem(3px);
+      background-color: $gray;
+
+      &:not(:last-child) {
+        margin-bottom: rem(5px);
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    background-color: $darkViolet;
+    width: calc(100% - 50px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    border-radius: rem(10px);
+    padding: rem(35px) rem(20px);
+    a {
+      display: block;
+      margin-bottom: rem(25px);
+      color: white;
+      font-weight: 300;
+
+      transition: color 150ms ease-in-out;
+      &:hover {
+        color: $cyan;
+      }
+    }
+
+    .underline {
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.15);
+      margin-bottom: rem(25px);
+    }
+
+    .cta {
+      .link-button {
+        width: 100%;
+      }
+    }
+    visibility: hidden;
+
+    &.show-links {
+      visibility: visible;
+    }
+  }
+}

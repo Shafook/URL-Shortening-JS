@@ -1,0 +1,134 @@
+.features {
+  background-color: rgb(243, 242, 242);
+  text-align: center;
+  color: $grayishViolet;
+
+  &__intro {
+    @include breakpoint-up(large) {
+      margin: 0 auto;
+      width: 50%;
+    }
+
+    h2 {
+      @include breakpoint-up(large) {
+        margin-bottom: 0rem;
+      }
+    }
+
+    p {
+      @include breakpoint-up(large) {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  &__grid {
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint-up(large) {
+      display: flex;
+      gap: rem(25px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 49%;
+      left: 49%;
+      bottom: 0;
+      height: 100%;
+      max-width: 10px;
+      background-color: $cyan;
+      z-index: -1;
+
+      @include breakpoint-up(large) {
+        top: 49%;
+        right: 0%;
+        left: 0%;
+        bottom: 49%;
+        height: 10px;
+        min-width: 100%;
+      }
+    }
+
+    > .features__item:nth-child(2) {
+      @include breakpoint-up(large) {
+        margin-top: rem(137.5px);
+      }
+    }
+    > .features__item:last-child {
+      @include breakpoint-up(large) {
+        margin-top: rem(175px);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    background-color: white;
+    margin-top: rem(100px);
+    margin-bottom: rem(50px);
+    padding: rem(40px);
+    border-radius: rem(10px);
+
+    @include breakpoint-up(large) {
+      padding: rem(26px);
+      margin-top: rem(100px);
+
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      height: 250px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: rem(-50px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $darkViolet;
+    width: rem(100px);
+    height: rem(100px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint-up(large) {
+      top: rem(-37.5px);
+      left: rem(26px);
+      transform: translateX(0%);
+      width: rem(75px);
+      height: rem(75px);
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  &__title {
+    color: $veryDarkBlue;
+    font-size: rem(28px);
+    font-weight: 700;
+    margin-bottom: rem(16px);
+    margin-top: rem(38px);
+
+    @include breakpoint-up(large) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__description {
+    @include breakpoint-up(large) {
+      font-size: rem(14px);
+    }
+  }
+}

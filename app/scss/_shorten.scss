@@ -1,0 +1,144 @@
+.shorten {
+  background-color: rgb(243, 242, 242);
+  position: relative;
+  margin-top: rem(150px);
+  padding-top: rem(120px);
+
+  @include breakpoint-up(medium) {
+    padding-top: rem(40px);
+  }
+
+  &__form {
+    position: absolute;
+    width: calc(100% - 3.125rem);
+    max-width: rem(1110px - 50px);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: rem(30px);
+    background-color: $darkViolet;
+    background-image: url('../../images/bg-shorten-mobile.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: rem(10px);
+
+    @include breakpoint-up(medium) {
+      background-image: url('../../images/bg-shorten-desktop.svg');
+      top: -60px;
+    }
+  }
+
+  &__flex {
+    @include breakpoint-up(medium) {
+      display: flex;
+      gap: rem(20px);
+    }
+  }
+
+  &__input {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: rem(15px);
+      color: $red;
+      font-family: 'Poppins', sans-serif;
+      font-size: $font-md;
+      outline: none;
+      border: none;
+      border-radius: rem(10px);
+      margin-bottom: rem(8px);
+      &::placeholder {
+        color: hsl(0, 89%, 75%);
+      }
+      @include breakpoint-up(medium) {
+        margin-bottom: 0px;
+      }
+    }
+    @include breakpoint-up(medium) {
+      flex: 4;
+      margin-bottom: 0px;
+    }
+
+    .message {
+      font-size: $font-sm;
+      color: $red;
+      margin-bottom: rem(5px);
+
+      @include breakpoint-up(medium) {
+        position: absolute;
+        padding: rem(5px);
+      }
+    }
+  }
+
+  &-button {
+    width: 100%;
+    border-radius: rem(10px);
+    margin-top: rem(12px);
+
+    @include breakpoint-up(medium) {
+      width: auto;
+      margin-top: 0px;
+      padding: 0.85rem 3rem;
+    }
+  }
+
+  &__list {
+  }
+
+  &__link {
+    margin-bottom: rem(25px);
+
+    @include breakpoint-up(medium) {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem(20px);
+    }
+    .original-link {
+      background-color: white;
+      color: $darkViolet;
+      padding: rem(15px);
+      margin-bottom: rem(1px);
+      border-top-left-radius: rem(10px);
+      border-top-right-radius: rem(10px);
+
+      @include breakpoint-up(medium) {
+        margin-bottom: 0px;
+        padding: 0px;
+      }
+    }
+
+    .new-link {
+      background-color: white;
+      color: $cyan;
+      padding: rem(15px);
+      border-bottom-left-radius: rem(10px);
+      border-bottom-right-radius: rem(10px);
+
+      @include breakpoint-up(medium) {
+        padding: 0px;
+      }
+
+      .short-link {
+        @include breakpoint-up(medium) {
+          margin-right: rem(15px);
+        }
+      }
+
+      .shorten-button {
+        @include breakpoint-up(medium) {
+          // padding: 0.6rem 1.8rem;
+          padding: 0.6rem 0rem;
+          width: rem(100px);
+          font-size: $font-sm;
+          border-radius: rem(5px);
+        }
+      }
+    }
+  }
+}

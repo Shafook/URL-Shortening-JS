@@ -1,0 +1,183 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-md;
+
+  color: $gray;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: $grayishViolet;
+  font-size: $font-sm;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: -0.2rem;
+  color: $darkViolet;
+  margin-top: 0px;
+}
+
+h1 {
+  font-size: $font-xlg;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: $font-lg;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: $font-lg;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: rem(1110px);
+  margin: 0 auto;
+
+  &--pall {
+    padding-top: rem(40px);
+    padding-bottom: rem(40px);
+    padding-left: rem(25px);
+    padding-right: rem(25px);
+  }
+}
+
+button,
+.link-button {
+  cursor: pointer;
+  position: relative;
+  background-color: $cyan;
+  color: white;
+  padding: 0.85rem 3rem;
+  border: none;
+  border-radius: rem(50px);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: $font-md;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: rem(50px);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.shorten-button {
+  padding: 0.85rem 3rem;
+  border-radius: rem(10px);
+
+  &::before {
+    border-radius: rem(10px);
+  }
+}
+
+.shorten-button {
+  .load {
+    display: none;
+  }
+
+  span {
+    display: inline;
+  }
+
+  &.loading {
+    @include breakpoint-up(medium) {
+      padding: 0.85rem 0rem;
+      width: 12rem;
+    }
+    .load {
+      margin: 0 auto;
+      display: block;
+      // background-color: white;
+      width: 30px;
+      height: 30px;
+      border: 5px dotted white;
+      border-radius: 50%;
+      animation-name: load;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      // transform: rotate(20deg);
+    }
+    span {
+      display: none;
+    }
+  }
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.message {
+  display: none;
+}
+
+.show-message {
+  display: block;
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

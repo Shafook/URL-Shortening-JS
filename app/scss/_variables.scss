@@ -1,0 +1,18 @@
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
+//Colors
+$cyan: hsl(180, 66%, 49%);
+$darkViolet: hsl(258, 27%, 26%);
+$red: hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+
+//Font size
+$font-sm: 0.875rem;
+$font-md: 1.125rem;
+$font-lg: 2.25rem;
+$font-xlg: 3.25rem;
