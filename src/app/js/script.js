@@ -21,10 +21,14 @@ formShorten.addEventListener('submit', (e) => {
   e.preventDefault();
   toggleErrorMsg(false);
 
+  const value = inputElem.value;
+  if (value === '') {
+    toggleErrorMsg(true);
+    return;
+  }
   btnShorten.disabled = true;
   btnShorten.classList.add('loading');
 
-  const value = inputElem.value;
   fetchShortLink(value);
 });
 
